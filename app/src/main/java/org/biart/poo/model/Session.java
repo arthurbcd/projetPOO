@@ -1,8 +1,12 @@
 package org.biart.poo.model;
+
 import java.time.LocalDate;
 import java.util.List;
-import org.biart.poo.state.SessionState;
-import org.biart.poo.observer.Observable;;
+
+import org.biart.poo.observer.Observable;
+import org.biart.poo.observer.Observer;
+import org.biart.poo.state.FullSessionState;
+import org.biart.poo.state.SessionState;;
 
 public class Session implements Observable {
 
@@ -17,6 +21,12 @@ public class Session implements Observable {
     public void subscribe(Student student) {
         if (students.size() < maxPlaces) {
             students.add(student);
+
+            if (students.size() == maxPlaces) {
+                setState(new FullSessionState());
+            }
+        } else {
+            System.out.println("Cannot subscribe, session is full.");
         }
     }
 
@@ -26,24 +36,25 @@ public class Session implements Observable {
 
     public void setState(SessionState state) {
         this.state = state;
+        notifyObservers(state);
     }
 
     @Override
-    public void addObservable(Observable Observable) {
-        
-        throw new UnsupportedOperationException("Unimplemented method 'addObservable'");
-    }
-
-    @Override
-    public void removeObservable(Observable Observable) {
+    public void addObserver(Observer observer) {
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'removeObservable'");
+        throw new UnsupportedOperationException("Unimplemented method 'addObserver'");
     }
 
     @Override
-    public void notifyObservable(Object arg) {
+    public void removeObserver(Observer observer) {
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'notifyObservable'");
+        throw new UnsupportedOperationException("Unimplemented method 'removeObserver'");
+    }
+
+    @Override
+    public void notifyObservers(Object arg) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'notifyObservers'");
     }
 
 }
