@@ -18,6 +18,16 @@ public class Session implements Observable {
     private SessionState state;
     private List<Student> students;
 
+    public Session(String id, String courseId, LocalDate startAt, LocalDate endAt, int maxPlaces, SessionState state, List<Student> students) {
+        this.id = id;
+        this.courseId = courseId;
+        this.startAt = startAt;
+        this.endAt = endAt;
+        this.maxPlaces = maxPlaces;
+        this.state = state;
+        this.students = students;
+    }
+
     public void subscribe(Student student) {
         if (students.size() < maxPlaces) {
             students.add(student);
