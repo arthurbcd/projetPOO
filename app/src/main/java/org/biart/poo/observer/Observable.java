@@ -1,9 +1,9 @@
 package org.biart.poo.observer;
 
 public interface Observable {
-    void addObservable(Observable Observable);
+    void addObserver(Observer observer);
 
-    void removeObservable(Observable Observable);
+    void removeObserver(Observer observer);
 
-    void notifyObservable(Object arg);
+    void notifyObservers(Object arg);
 }

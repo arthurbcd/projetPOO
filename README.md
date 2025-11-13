@@ -21,6 +21,18 @@ Aprés on a commencé a créer les classes suivantes:
 Et aussi le State Design Pattern
 
 L'interface `SessionState` avec les state suivantes:
+
 - EndedSessionState
 - FullSessionState
+- OpenSessionState
+- StartedSessionState
+- CanceledSessionState
 
+Pour utiliser ses états pour notifier les utilisateurs on a aussi implementé le Observer pattern.
+
+Pour ça, on a crée:
+
+- Observer
+- Observable
+
+Et la classe ``
