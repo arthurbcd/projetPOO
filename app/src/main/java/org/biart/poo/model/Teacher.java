@@ -1,5 +1,5 @@
 package org.biart.poo.model;
 
-public class Formation {
+public class Teacher {
 
 }

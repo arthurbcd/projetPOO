@@ -1,5 +1,5 @@
 package org.biart.poo.model;
 
-public class Session {
+public class Course {
 
 }
