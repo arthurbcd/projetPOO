@@ -1,7 +1,7 @@
 package org.biart.poo.model;
 
 public enum Category {
-    INFORMATICS,
+    COMPUTER_SCIENCE,
     MANAGEMENT,
     LANGUAGES
 }

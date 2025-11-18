@@ -1,9 +1,22 @@
 package org.biart.poo.observer;
 
-public interface Observable {
-    void addObserver(Observer observer);
+import java.util.ArrayList;
+import java.util.List;
 
-    void removeObserver(Observer observer);
+public class Observable {
+    private final List<Observer> observers = new ArrayList<>();
 
-    void notifyObservers(Object arg);
+    public void addObserver(Observer observer) {
+        observers.add(observer);
+    }
+
+    public void removeObserver(Observer observer) {
+        observers.remove(observer);
+    }
+
+    public void notifyObservers(String message) {
+        for (Observer observer : observers) {
+            observer.update(message);
+        }
+    }
 }
